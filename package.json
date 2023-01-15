@@ -17,9 +17,7 @@
     "jquery": "^3.6.3",
     "vue": "^3.2.45",
     "vue-bootstrap-login": "^1.1.0",
-    "vue-router": "^4.1.6"
-  },
-  "devDependencies": {
+    "vue-router": "^4.1.6",
     "@types/node": "^18.11.12",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vue/tsconfig": "^0.1.3",
