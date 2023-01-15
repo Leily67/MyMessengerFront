@@ -36,7 +36,6 @@ a {
     top: -50px;
     width: 50%;
     right: calc(50% - 300px);
-    transition: 3s ease-in-out;
     z-index: 0;
     box-shadow: 0 0 15px 9px #00000096;
 }
@@ -87,11 +86,11 @@ a {
             <h2>FirstChat</h2>
             <router-link to="/login">
               <label id="label-register" for="log-reg-show">Se connecter</label>
-              <input type="radio" name="active-log-panel" id="log-reg-show">
+              <input type="radio" id="log-reg-show">
             </router-link>
             <router-link to="/register">
               <label id="label-register" for="log-reg-show">S'enregistrer</label>
-              <input type="radio" name="active-log-panel" id="log-reg-show">
+              <input type="radio" id="log-reg-show">
             </router-link>
         </div>
     <div class="white-panel">

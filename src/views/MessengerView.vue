@@ -7,51 +7,81 @@
 }
 
 .chat-list {
-    background: purple;
+    background: black;
     height: 100%;
     width: 20%;
 }
 
 .board {
-    background: yellow;
+    background: black;
     height: 100%;
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    border: thick double white;
 }
 
 .chat {
-    background: orange;
+    background: grey;
     flex: 1 0;
     width: 100%;
     display: flex;
     flex-direction: column;
 }
 
-.input {
-    background: cyan;
-    width: 100%;
-    height: 100px;
-}
-
 .user-entry {
     border: solid 1px black;
     padding: 5px;
     text-align: center;
+    margin: 25px 0;
+    font-weight: 700;
+    font-size: medium;
+    text-align: left;
+    margin-left: 25px;
+}
+
+.user-entry:hover {
+    color: red;
 }
 
 .from-message {
-    border: solid 1px black;
-    display: inline-block;
-    background: grey;
-    
+    background: rgb(57, 4, 4);
+    color: white;
+    font-size: medium;
+    padding: 5px;  
 }
 
 .to-message {
-    border: solid 1px black;
-    background: black
+    background: black;
+    font-size: medium;
+    color: white;
+    padding: 5px;
 }
 
+.scope-input input[type="submit"] {
+    width: 10%;
+    background: #444444;
+    color: #f9f9f9;
+    border: none;
+    padding: 10px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+    height: 50px;
+}
+
+.scope-input {
+    background: white;
+    border: solid 1px black;
+    display: flex;
+}
+
+textarea {
+    resize: none;
+    width: 90%;
+    height: 50px;
+    border: none;
+}
 
 </style>
 
@@ -68,9 +98,9 @@
                 <div v-for="message in conversation" :class="message.to_user == selectedUser ? 'to-message' : 'from-message'" :key="message.id">{{ message.content }}</div>
                 
             </div>
-            <div class="input">
-                <input type="text" v-model="message" placeholder="Votre message">
-                <button type="submit" @click="sendMessage" class="btn btn-primary">Envoyez</button>
+            <div class="scope-input">
+                <textarea class="champ" v-model="message" placeholder="Votre message"></textarea>
+                <input type="submit" @click="sendMessage" value="Envoyez">
             </div>
         </div>
     </div>

@@ -37,7 +37,6 @@ a {
     top: -50px;
     width: 50%;
     right: calc(50% - 300px);
-    transition: 3s ease-in-out;
     z-index: 0;
     box-shadow: 0 0 15px 9px #00000096;
 }
@@ -61,6 +60,7 @@ a {
     cursor: pointer;
     font-weight: 600;
     font-size: 18px;
+    margin: 15px 0;
 }
 
 .login-info-box {
@@ -70,6 +70,7 @@ a {
     left: 0;
     position: absolute;
     text-align: left;
+    margin: 15px 0;
 }
 
 .register-show {
@@ -109,6 +110,10 @@ a {
     <div class="login-reg-panel">
         <div class="login-info-box">
             <h2> Vous avez un compte ?</h2>
+            <router-link to="/">
+                <label id="label-register" for="log-reg-show">Home</label>
+                <input type="radio" name="active-log-panel" id="log-reg-show">
+            </router-link>
             <router-link to="/login">
                 <label id="label-register" for="log-reg-show">Se connecter</label>
                 <input type="radio" name="active-log-panel" id="log-reg-show">
