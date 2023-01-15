@@ -135,6 +135,14 @@ export default {
             .catch(error => console.log('error', error));
 
             this.message = "";
+        },
+
+        update(){
+            setTimeout(()=>{
+            this.fetchUsers();
+            this.fetchDialog(this.selectedUser);
+            this.update();
+        }, 1000);
         }
 
     },
@@ -148,10 +156,7 @@ export default {
     },
     mounted() {
         this.fetchUsers();
-        setTimeout(()=>{
-            this.fetchUsers();
-            this.fetchDialog(this.selectedUser);
-        }, 1000);
+        this.update();
     }
 }
 
