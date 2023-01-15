@@ -148,6 +148,10 @@ export default {
     },
     mounted() {
         this.fetchUsers();
+        setTimeout(()=>{
+            this.fetchUsers();
+            this.fetchDialog(this.selectedUser);
+        }, 1000);
     }
 }
 
