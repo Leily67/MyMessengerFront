@@ -27,6 +27,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
+    padding: 0 10px;
 }
 
 .user-entry {
@@ -42,20 +43,29 @@
 
 .user-entry:hover {
     color: red;
+    cursor: pointer;
 }
 
 .from-message {
     background: rgb(57, 4, 4);
     color: white;
     font-size: medium;
-    padding: 5px;  
+    align-self: flex-end;
+    border-radius: 1em;
+    padding: 0.25em 0.75em;
+    margin: 0.0625em;
+    max-width: 50%;
 }
 
 .to-message {
     background: black;
     font-size: medium;
     color: white;
-    padding: 5px;
+    align-self: flex-start;
+    border-radius: 1em;
+    padding: 0.25em 0.75em;
+    margin: 0.0625em;
+    max-width: 50%;
 }
 
 .scope-input input[type="submit"] {
@@ -99,7 +109,7 @@ textarea {
                 
             </div>
             <div class="scope-input">
-                <textarea class="champ" v-model="message" placeholder="Votre message"></textarea>
+                <textarea class="champ" v-model="message" @keyup.enter="sendMessage" placeholder="Votre message"></textarea>
                 <input type="submit" @click="sendMessage" value="Envoyez">
             </div>
         </div>
