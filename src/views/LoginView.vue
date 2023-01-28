@@ -154,7 +154,7 @@ export default {
                 body: raw,
             };
 
-            fetch("https://mymenssenger-backend.osc-fr1.scalingo.io/login", requestOptions)
+            fetch(`${import.meta.env.VITE_BACKEND_URL}/login`, requestOptions)
                 .then(response => response.json())
                 .then(result => {
                     localStorage.token = result.data;

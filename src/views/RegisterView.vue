@@ -156,7 +156,7 @@ export default {
                 headers : myHeaders
             };
 
-            fetch("https://mymenssenger-backend.osc-fr1.scalingo.io/register", requestOptions)
+            fetch(`${import.meta.env.VITE_BACKEND_URL}/register`, requestOptions)
                 .then(response => {
                     this.$router.push('/login');
                 })

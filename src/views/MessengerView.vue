@@ -130,7 +130,7 @@ export default {
                 headers: headers
             };
 
-            const response = await fetch ("https://mymenssenger-backend.osc-fr1.scalingo.io/users", options)
+            const response = await fetch (`${import.meta.env.VITE_BACKEND_URL}/users`, options)
             const result = await response.json()
             this.users = result.data;
         },
@@ -148,7 +148,7 @@ export default {
                 headers: headers
             };
 
-            const response = await fetch (`https://mymenssenger-backend.osc-fr1.scalingo.io/users/${id}/messages`, options)
+            const response = await fetch (`${import.meta.env.VITE_BACKEND_URL}/users/${id}/messages`, options)
             const result = await response.json()
             this.conversation = result.data;
         
@@ -170,7 +170,7 @@ export default {
                 body: raw,
             };
 
-            fetch("https://mymenssenger-backend.osc-fr1.scalingo.io/messages", requestOptions)
+            fetch(`${import.meta.env.VITE_BACKEND_URL}/messages`, requestOptions)
             .then(result => this.fetchDialog(this.selectedUser))
             .catch(error => console.log('error', error));
 
